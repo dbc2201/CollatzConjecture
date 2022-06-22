@@ -1,0 +1,10 @@
+java:
+  stage: test
+  image: maven:latest
+  script:
+    - mvn -B package --file pom.xml
+    - mvn -B test --file pom.xml
+  artifacts:
+    when: always
+    reports:
+      junit: enabled
